@@ -61,14 +61,5 @@ public class Venda implements Serializable {
     public void setTotalVenda(Double totalVenda) {
          this.totalVenda = totalVenda;
     }
-    
-
-    
-
-    
-    
-    
-    
-}   
-
+  
     
