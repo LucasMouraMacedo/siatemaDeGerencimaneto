@@ -5,15 +5,6 @@
  */
 package br.edu.ifnmg.sisGerencia.DAO;
 
-import javax.persistence.EntityManager;
-import java.io.Serializable;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.Query;
-
 /**
  *
  * @author joice
@@ -22,7 +13,7 @@ import br.edu.ifnmg.sisGerencia.DomainModel.Fornecedor;
 import br.edu.ifnmg.sisGerencia.DomainModel.PessoaJuridica;
 import br.edu.ifnmg.sisGerencia.DomainModel.Pessoa;
 
-
+/*
 public class FornecedorDAO {
     
     private static final long serialVersionUID = 1L;
@@ -116,8 +107,7 @@ public class FornecedorDAO {
 			return null;
 		}	
 	}
-}
+}*/
+
+
 	
-}	
-}  
-}

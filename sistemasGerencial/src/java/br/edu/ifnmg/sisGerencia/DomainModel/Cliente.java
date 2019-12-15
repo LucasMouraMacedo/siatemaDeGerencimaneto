@@ -9,6 +9,12 @@ package br.edu.ifnmg.sisGerencia.DomainModel;
  *
  * @author Lucas Moura
  */
-public class Cliente {
+public class Cliente extends PessoaFisica{
+    
+   
+
+    public Cliente(Long id, String nome, String email) {
+        super(id, nome, email);
+    }
     
 }
