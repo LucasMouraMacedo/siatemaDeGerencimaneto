@@ -1,7 +1,7 @@
 /*
     Classe Geral Pessoa
  */
-package br.edu.ifnmg.ArqSoft.DomainModel;
+package br.edu.ifnmg.sisGerencia.DomainModel;
 
 import java.io.Serializable;
 import java.util.Date;

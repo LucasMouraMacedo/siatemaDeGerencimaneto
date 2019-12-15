@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifnmg.ArqSoft.DomainModel;
+package br.edu.ifnmg.sisGerencia.DomainModel;
 
 /**
  *
@@ -20,10 +20,20 @@ public class Funcionario extends PessoaFisica {
     
     private String funcao;
 
+    
+    //Contruct para uso de herança
     public Funcionario(Long id, String nome, String email) {
         super(id, nome, email);
     }
+    
+    public Funcionario(String login, String funcao, Long id, String nome, String email) {
+        super(id, nome, email);
+        this.login = login;
+        this.funcao = funcao;
+    }
 
+    
+    //Getters e Setters
     
     public String getLogin() {
         return login;
@@ -48,6 +58,8 @@ public class Funcionario extends PessoaFisica {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
+    
+    
     
     //HashCode para proteção da conta de acesso do funconario
     public int hashCode() {
@@ -74,13 +86,6 @@ public class Funcionario extends PessoaFisica {
         return true;
     } 
 
-    public Funcionario(String login, String funcao, Long id, String nome, String email) {
-        super(id, nome, email);
-        this.login = login;
-        this.funcao = funcao;
-    }
     
-    
-    
-    
+      
 }

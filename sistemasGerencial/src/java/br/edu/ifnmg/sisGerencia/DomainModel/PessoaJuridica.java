@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifnmg.ArqSoft.DomainModel;
+package br.edu.ifnmg.sisGerencia.DomainModel;
 
 import java.util.regex.Pattern;
 import java.util.regex.*;
