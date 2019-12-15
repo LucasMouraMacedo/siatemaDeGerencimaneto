@@ -1,4 +1,4 @@
-/*create database sistemaGerencial;*/
+create database sistemaGerencial;
 
 use sistemaGerencial;
 
