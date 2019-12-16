@@ -11,6 +11,9 @@ package br.edu.ifnmg.sisGerencia.DomainModel;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef6f188... correção das telas
 public class Fornecedor extends PessoaJuridica {
     
     
@@ -21,6 +24,7 @@ public class Fornecedor extends PessoaJuridica {
         super(id, nome, email);
     }
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
@@ -32,6 +36,8 @@ public class Fornecedor {
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of ef6f188... correção das telas
     public String getTipoFornecedor() {
         return tipoFornecedor;
     }

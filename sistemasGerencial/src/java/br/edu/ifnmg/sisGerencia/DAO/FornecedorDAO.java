@@ -7,6 +7,9 @@ package br.edu.ifnmg.sisGerencia.DAO;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef6f188... correção das telas
 import br.edu.ifnmg.ArqSoft.Connection.ConnectionFactory;
 import br.edu.ifnmg.sisGerencia.DomainModel.Fornecedor;
 import java.sql.*;
@@ -14,16 +17,22 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of ef6f188... correção das telas
 /**
  *
  * @author joice
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef6f188... correção das telas
 public class FornecedorDAO{
     
     public boolean Salvar(Fornecedor fornecedor){
@@ -54,6 +63,7 @@ public class FornecedorDAO{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }   
 }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
@@ -163,3 +173,5 @@ public class FornecedorDAO {
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of ef6f188... correção das telas

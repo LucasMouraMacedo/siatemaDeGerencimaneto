@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef6f188... correção das telas
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +17,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
@@ -29,6 +33,8 @@ import javax.persistence.Query;
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of ef6f188... correção das telas
 
 /**
  *
@@ -36,6 +42,9 @@ import javax.persistence.Query;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef6f188... correção das telas
 public class FuncionarioDAO extends RepositorioFuncionario{
 
 
@@ -69,6 +78,7 @@ public class FuncionarioDAO extends RepositorioFuncionario{
     
     
 }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
@@ -155,3 +165,5 @@ public class FuncionarioDAO {
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of ef6f188... correção das telas
