@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
     xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
@@ -18,31 +17,19 @@
         
         <p:tabView>
             <p:tab title="Cadastro de Produto">
-            <p:panelGrid columns="4" layout="grid" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4" contentStyleClass="ui-fluid">
+            <p:panelGrid columns="4" layout="grid" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4">
+                <h:form>
                 <p:outputLabel for="codigo" value="Código do Produto" />
                 <p:inputText id="codigo" />
 
                 <p:outputLabel for="nome" value="Nome" />
-                <p:inputText id="nome" />
-
-                <p:outputLabel for="marca" value="Marca" />
-                <p:datePicker id="marca"/>
-
-                <p:outputLabel for="tamanho" value="Tamanho" />
-                <p:selectBooleanCheckbox id="tamanho" />
-
-                <p:outputLabel for="quantidade" value="Quantidade" />
-                <p:inputText id="quantidade" />
-
-                <p:outputLabel for="selectOne" value="SelectOne (misaligned)" />
-                <p:selectOneMenu id="selectOne">
-                    <f:selectItem itemLabel="Select One" itemValue="" />
-                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                </p:selectOneMenu>
+                <p:inputText id="nome" value="#{controllerCliente.cliente.nome}"/>
+                
+                <p:commandButton value="Enviar" style="margin-right:20px;" action="#{controllerCliente.salvar()}" update="@form"></p:commandButton>
+                </h:form>
             </p:panelGrid>
         </p:tab>
+ 
             
             
             
@@ -61,10 +48,5 @@
         </p:tab>
     </p:tabView>
         
-
-        
-<p:linkButton  value="Enviar" style="margin-right:20px;">
-    <f:param name="productId" value="10" />
-</p:linkButton>
     </h:body>
 </html>
