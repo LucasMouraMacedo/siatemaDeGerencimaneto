@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<f:event listener="#{FuncionarioMB.redirecionaFuncionarioLogadoIndex()}"
+		 type="preRenderView"/>
+
+
+
+<h:head>
+
+	<title>SGC</title>
+	<h:outputStylesheet library="css" name="style-login.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+</h:head>
+
+
+
+
+<h:body styleClass="flat-blue login-page">
+
+
+	
+	<div id="top-header">
+		<ui:insert name="top-header">
+			<p:growl id="msg" sticky="false" life="4000" />
+		</ui:insert>
+	</div>
+
+
+	<p:growl id="msg1" sticky="false" life="4000" />
+
+	<div class="container">
+
+		<div class="login-box">
+			<div>
+				<div class="login-form row">
+
+					<div id="header">
+						<div class="col-sm-12 text-center login-header">
+
+							<p:graphicImage url="/resources/images/logo-icn-azul.png"
+								width="200px" height="80px"></p:graphicImage>
+
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="login-body"
+							style="background-color: rgba(0, 0, 0, 10%)">
+
+							<div class="progress hidden" id="login-progress">
+								<div
+									class="progress-bar progress-bar-success progress-bar-striped active"
+									role="progressbar" aria-valuenow="100" aria-valuemin="0"
+									aria-valuemax="100" style="width: 100%">Log In...</div>
+							</div>
+
+
+
+
+
+
+							<div id="content">
+								<h:form id="frm">
+
+
+									<div class="control">
+										<p:inputText value="#{FuncionarioMB.login}" styleClass="form-control" placeholder="E-mail"
+											size="30" />
+									</div>
+									<div class="control">
+										<p:password value="#{FuncionarioMB.senha}" styleClass="form-control" placeholder="Senha"
+											size="30" />
+									</div>
+									<div class="login-button text-center">
+										<p:commandButton value="ENTRAR" action="#{FuncionarioMB.logar()}" update="frm , msg"
+											styleClass="btn-primary" />
+									</div>
+								</h:form>
+							</div>
+						</div>
+
+						<h:form>
+
+						<div id="footer">
+							<div class="login-footer">
+
+								<div class="col-sm-6 text-left">
+									<p:commandLink onclick="PF('DialogRedefinirSenha').show()"
+										style="color: white;" value="ESQUECEU A SENHA?" >
+
+									</p:commandLink>
+								</div>
+
+								<div class="col-sm-6 text-right">
+
+
+										<p:commandLink onclick="PF('DialogNovoFuncionario').show()"
+											style="color: white;" value="CADASTRAR">
+
+										</p:commandLink>
+
+
+								</div>
+
+							</div>
+						</div>
+
+						</h:form>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<p:dialog widgetVar="DialogNovoFuncionario" id="dlgNovoFuncionario"
+		showEffect="fade" header="Cadastro de Funcionario " resizable="true"
+		hideEffect="fade" modal="true" responsive="true" width="300px"
+		closable="true" styleClass="box-info">
+
+		<p:ajax event="close" resetValues="true" update="form_novoFuncionario" listener="#{FuncionarioMB.limpaFuncionario()}"/>
+
+		<h:form id="form_novoFuncionario">
+
+			<div class="text-center">
+				<p:panelGrid columns="1" layout="grid">
+					<p:selectOneMenu id="Unidade"  appendTo="@this"
+									 value="#{FuncionarioMB.novoFuncionario.setor.unidade}"
+									 converter="unidadeConverter" >
+						<f:selectItem itemLabel="Selecione a Unidade" noSelectionOption="true" />
+						<f:selectItems value="#{unidadeMB.unidades()}" var="unidade"
+									   itemLabel="#{unidade.nome}" itemValue="#{unidade}"/>
+						<p:ajax event="change" update="Setor" listener="#{FuncionarioMB.selecionaUnidadeNovoFuncionario()}"/>
+					</p:selectOneMenu>
+
+
+					<p:selectOneMenu appendTo="@this" id="Setor" value="#{FuncionarioMB.novoFuncionario.setor}"
+									 converter="setorConverter" required="true"
+									 requiredMessage="Preencha o campo 'SETOR' ">
+						<f:selectItem itemLabel="Selecione o Setor" noSelectionOption="true"  />
+						<f:selectItems value="#{FuncionarioMB.novoFuncionario.setor.unidade.setores}" var="setor"
+									   itemLabel="#{setor.nome}" itemValue="#{setor}" />
+					</p:selectOneMenu>
+
+
+					<p:inputText value="#{FuncionarioMB.novoFuncionario.nome}" required="true"
+						styleClass="form-control" placeholder="Nome"
+						requiredMessage="Preencha o campo 'NOME'" />
+
+					<p:inputText  validator="#{FuncionarioMB.validaEmailCadastrado}" id="email"
+						value="#{FuncionarioMB.novoFuncionario.email}" styleClass="form-control"
+						placeholder="E-mail" > 					
+
+					</p:inputText>
+						
+
+					<p:password required="true" requiredMessage="Preencha o campo 'SENHA'" value="#{FuncionarioMB.novoFuncionario.senha}"
+						styleClass="form-control" placeholder="Senha" />
+
+
+
+
+					<p:commandButton update="msg1 , form_novoFuncionario" value="SALVAR"
+						action="#{FuncionarioMB.cadastrarFuncionario}" styleClass="btn-success" />
+
+				</p:panelGrid>
+			</div>
+		</h:form>
+
+
+	</p:dialog>
+
+
+
+	<p:dialog widgetVar="DialogRedefinirSenha" id="dlgRedefinirSenha"
+			  showEffect="fade" header="ESQUECI MINHA SENHA" resizable="true"
+			  hideEffect="fade" modal="true" responsive="true"
+			  closable="true" styleClass="box-info">
+
+		<p:ajax event="close" resetValues="true" update="formRedefinirSenha:em" />
+
+		<h:form id="formRedefinirSenha">
+
+			<p:growl id="growNovaSenha" sticky="false" life="4000" />
+
+
+
+				<p:panel >
+				<p:inputText style="width: 100%" value="#{FuncionarioMB.emailNovoEmail}" placeholder="E-mail" id="em"/>
+
+
+				<f:facet name="footer">
+					<div class="text-center">
+					<p:commandButton value="ENVIAR" action="#{Funcionario.enviaNovaPassword()}" update="msg"/>
+
+					</div>
+				</f:facet>
+
+				</p:panel>
+
+
+		</h:form>
+
+
+	</p:dialog>
+
+
+
+</h:body>
+</html>

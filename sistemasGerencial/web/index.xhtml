@@ -1,49 +1,30 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h1 style="margin-top:0">Basic</h1>
-        <p:sidebar widgetVar="sidebar1" baseZIndex="10000">
-            <h1 style="font-weight:normal">Left Sidebar</h1>
-            <p:commandButton value="Cancel" oncomplete="PF('sidebar1').hide()"/>
-        </p:sidebar>
-        
-        <p:commandButton icon="pi pi-arrow-right" oncomplete="PF('sidebar1').show()" />
-        
-        <p:tabView>
-            <p:tab title="Cadastro de Produto">
-            <p:panelGrid columns="4" layout="grid" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4">
-                <p:outputLabel for="codigo" value="Código do Produto" />
-                <p:inputText id="codigo" />
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="WEB-INF/templates/template.xhtml">
 
-                <p:outputLabel for="nome" value="Nome" />
-                <p:inputText id="nome" value="#{ControllerCliente.cliente.nome}"/>
-                
-                <p:commandButton value="Enviar" style="margin-right:20px;" action="#{ControllerCliente.salvar}"></p:commandButton>
-            </p:panelGrid>
-        </p:tab>
-            
-            
-            
-                <h1 style="margin-top:0">Basic</h1>
-        <p:tab title="Busca">
-            <h:panelGrid columns="2" cellpadding="10">
-                <!--<p:graphicImage name="demo/images/godfather/godfather2.jpg" />-->
-                <h:outputText value="Conteúdo" />
-            </h:panelGrid>
-        </p:tab>
-        <p:tab title="Listagem">
-            <h:panelGrid columns="2" cellpadding="10">
-               <!-- <p:graphicImage name="demo/images/godfather/godfather3.jpg" />-->
-                <h:outputText value="Conteúdo"/>
-            </h:panelGrid>
-        </p:tab>
-    </p:tabView>
-        
-    </h:body>
-</html>
+    <ui:define name="head-end">
+        <ui:param name="renderBreadCrumb" value="false"/>
+    </ui:define>
+
+    <ui:define name="title">
+        <p:growl autoUpdate="true" life="4000"/>
+
+        <h2 class="align-center">
+            Bem vindo ao SGC <span class="text-aqua"> <i><a href="http://karanalpe.com.br/" target="_blank"
+                                                          style="text-transform: none;text-decoration: none"> Karanalpe</a></i></span>!
+            <br/>
+            <small>Utilizando <p:link value="Primefaces" href="http://primefaces.org" target="_blank"/>, <p:link value="Bootstrap"
+                                                                                                  href="http://getbootstrap.com/" target="_blank"/> e
+                <p:link value="Admin LTE" href="https://almsaeedstudio.com/themes/AdminLTE/index2.html" target="_blank"/> com
+                <p:link value="JSF" href="https://javaserverfaces.java.net/" target="_blank"/>.
+            </small>
+        </h2>
+		
+
+		
+		
+    </ui:define>
+
+
+</ui:composition>
