@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +15,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 =======
+=======
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 
 package br.edu.ifnmg.sisGerencia.DAO;
 
@@ -22,12 +25,16 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+<<<<<<< HEAD
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 
 /**
  *
  * @author joice
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 public class FuncionarioDAO extends RepositorioFuncionario{
 
@@ -63,6 +70,8 @@ public class FuncionarioDAO extends RepositorioFuncionario{
     
 }
 =======
+=======
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 public class FuncionarioDAO {
     /*
  * To change this license header, choose License Headers in Project Properties.
@@ -142,4 +151,7 @@ public class FuncionarioDAO {
 */	
 }
 
+<<<<<<< HEAD
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto

@@ -10,6 +10,10 @@ import java.util.Objects;
 
 import java.util.regex.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import javax.persistence.Transient;
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 =======
 import javax.persistence.Transient;
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto

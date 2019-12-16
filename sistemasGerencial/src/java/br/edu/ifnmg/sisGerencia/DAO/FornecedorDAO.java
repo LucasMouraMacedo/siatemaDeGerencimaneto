@@ -6,6 +6,7 @@
 package br.edu.ifnmg.sisGerencia.DAO;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import br.edu.ifnmg.ArqSoft.Connection.ConnectionFactory;
 import br.edu.ifnmg.sisGerencia.DomainModel.Fornecedor;
 import java.sql.*;
@@ -15,10 +16,13 @@ import java.util.logging.Logger;
 
 =======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 /**
  *
  * @author joice
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 public class FornecedorDAO{
     
@@ -51,6 +55,8 @@ public class FornecedorDAO{
     }   
 }
 =======
+=======
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 import br.edu.ifnmg.sisGerencia.DomainModel.Fornecedor;
 import br.edu.ifnmg.sisGerencia.DomainModel.PessoaJuridica;
 import br.edu.ifnmg.sisGerencia.DomainModel.Pessoa;
@@ -153,4 +159,7 @@ public class FornecedorDAO {
 
 
 	
+<<<<<<< HEAD
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto

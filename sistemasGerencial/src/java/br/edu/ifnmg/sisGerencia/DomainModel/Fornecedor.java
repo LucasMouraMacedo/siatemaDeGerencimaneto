@@ -10,6 +10,7 @@ package br.edu.ifnmg.sisGerencia.DomainModel;
  * @author joice
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Fornecedor extends PessoaJuridica {
     
     
@@ -21,10 +22,15 @@ public class Fornecedor extends PessoaJuridica {
     }
 
 =======
+=======
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
 public class Fornecedor {
     
     private String tipoFornecedor;
 
+<<<<<<< HEAD
+>>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
+=======
 >>>>>>> parent of f5eea02... Telas de Funcionario,Cliente,Fornecedor e Produto
     public String getTipoFornecedor() {
         return tipoFornecedor;
