@@ -28,10 +28,10 @@ public class ControllerCliente {
         this.cliente = new Cliente();
         return "novo";
     }*/
-    public String salvar() throws Exception{
+    public void salvar(){
                 ClienteDAO dao = new ClienteDAO();
                 dao.Salvar(cliente);
-            return "salvar";
-        }   
+        }
+    
     
 }

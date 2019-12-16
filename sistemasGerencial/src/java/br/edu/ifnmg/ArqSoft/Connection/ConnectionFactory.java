@@ -6,6 +6,8 @@
 package br.edu.ifnmg.ArqSoft.Connection;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,36 +15,34 @@ import java.sql.*;
  */
 public class ConnectionFactory {
     
-    public static Connection getConnection() throws Exception{
-      try{
+       private static Connection conexao;
+    private static final String URL_CONEXAO = "jdbc:mysql://localhost/sistemaGerencial";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "mimi.100";
 
-         Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost/sistemaGerencial", "root", "mimi.100");
-      } 
-
-      catch(Exception e){
-            throw new Exception(e.getMessage());
+    public static Connection getConexao() {
+        if(conexao == null){
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
+            } catch (SQLException ex) {
+                Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-    }   
-    public static void closeConnection(Connection conn, Statement stmt, ResultSet rs)throws Exception{
-        close(conn,stmt,rs);
+        return conexao;
     }
-
-    public static void closeConnection(Connection conn, Statement stmt)throws Exception{
-        close(conn,stmt,null);
-    }
-
-    public static void closeConnection(Connection conn)throws Exception{
-        close(conn,null,null);
-    }
-
-    private static void close(Connection conn, Statement stmt, ResultSet rs) throws Exception{
-        try{
-            if(rs!=null) rs.close();
-            if(stmt!=null)stmt.close();
-            if(conn!=null)conn.close();
-        }catch(Exception e){
-            throw new Exception(e.getMessage());
+    
+    public static void fecharConexao(){
+        if(conexao != null){
+            try {
+                conexao.close();
+                conexao = null;
+            } catch (SQLException ex) {
+                Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
+    
 }

@@ -19,41 +19,15 @@ import java.util.logging.Logger;
  */
 public class ClienteDAO implements RepositorioCliente{
 
+
     @Override
-    public boolean Salvar(Cliente cliente) {
-        Connection con = null;
+    public boolean Salvar(Cliente cliente){
         try {
-            con = ConnectionFactory.getConnection();
-        } catch (Exception ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-		
-		String sql = "";
-		
-		sql +="insert into cliente(nome)";
-		sql += "values (?);";
-		PreparedStatement preparedStmt = null;
-        try {
-            preparedStmt = con.prepareStatement(sql);
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            preparedStmt.setString (1, cliente.getNome());
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-        try {
-            // execute the preparedstatement
-            preparedStmt.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      
-        try {
-            con.close();
+            Connection conexao = ConnectionFactory.getConexao();
+            PreparedStatement ps = conexao.prepareCall("INSERT INTO `cliente` (`nome`) VALUES (?)");
+            ps.setString(1, cliente.getNome());
+            ps.execute();
+            ConnectionFactory.fecharConexao();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
