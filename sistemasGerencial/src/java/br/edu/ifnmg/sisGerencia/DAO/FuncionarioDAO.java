@@ -18,7 +18,7 @@ public class FuncionarioDAO {
  * and open the template in the editor.
  */
    
-    private static final long serialVersionUID = 1L;
+  /*  private static final long serialVersionUID = 1L;
 	
     private EntityManager manager;
 
@@ -87,6 +87,6 @@ public class FuncionarioDAO {
 		}	
 	}
 }
-	
-}	
+*/	
+}
 
