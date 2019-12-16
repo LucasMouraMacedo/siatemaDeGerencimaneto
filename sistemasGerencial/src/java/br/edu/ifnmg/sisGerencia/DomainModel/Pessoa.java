@@ -9,7 +9,6 @@ import java.util.Objects;
 
 
 import java.util.regex.*;
-import javax.persistence.Transient;
 
 /**
  *
